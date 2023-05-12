@@ -1,0 +1,19 @@
+<!--pages/collect/index.wxml-->
+
+<view wx:if="{{collects.length === 0}}" style="text-align: center; font-size: 20px;">
+  暂无收藏
+
+</view>
+
+
+
+<view  wx:for="{{collects}}" wx:for-item="product" wx:key="id">
+      <navigator url="/pages/product_detail/index?id={{product.productId}}">
+          <view>
+            <image  mode="widthFix" src="{{baseUrl+'/image/product/'+product.proPic}}"></image>
+            <view  style="text-align: center;">{{product.productName}}</view>
+            <view style="text-align: center;">￥{{product.price}}</view>
+          </view>
+        </navigator>
+        <button data-id="{{product.id}}" style="margin-left: 320rpx;"  size="mini" type="warn"  bindtap="handledel">删除</button>
+</view>

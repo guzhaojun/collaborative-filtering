@@ -1,0 +1,16 @@
+<!--pages/size/index.wxml-->
+<view class="page-section">
+    <view class="page-section-title">尺码</view>
+    <view class="weui-cells weui-cells_after-title">
+      <radio-group bindchange="radioChange">
+        <label class="weui-cell weui-check_label" wx:for="{{items}}" wx:key="{{item.value}}">
+          <view class="weui-cell__hd">
+            <radio value="{{item.value}}" checked="true"/>{{item.name}}
+          </view>
+          <!-- <view class="weui-cell__bd"></view> -->
+        </label>
+      </radio-group>
+    </view>
+    <!-- <button  style="margin-left: 320rpx;"  size="mini" type="default"  bindtap="handleConfirm">确定</button> -->
+  
+</view>

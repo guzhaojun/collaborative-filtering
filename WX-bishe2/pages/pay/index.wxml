@@ -1,0 +1,61 @@
+<!-- 收货地址开始 -->
+<view class="receive_address_row">
+  <view class="user_info">
+    <view class="user_info_item">{{address[0].address}}</view>
+    <text class="user_info_item" decode="{{true}}">{{address[0].userName}}&nbsp;&nbsp;{{address[0].telNumber}}</text>
+  </view>
+</view>
+<!-- 收货地址结束 -->
+<!-- 购物车清单开始 -->
+<view class="cart_content">
+  <view class="cart_main">
+      <view class="cart_item"
+      wx:for="{{cart}}"
+      wx:key="id"
+      >
+        
+
+        <!-- 商品图片开始 -->
+        <navigator class="cart_img_wrap" url="/pages/product_detail/index?id={{item.id}}">
+          <image mode="widthFix" src="{{baseUrl+'/image/product/'+item.proPic}}"></image>
+        </navigator>
+        <!-- 商品图片结束 -->
+
+        <!-- 商品信息开始 -->
+        <view class="cart_info_wrap">
+          <navigator url="/pages/product_detail/index?id={{item.id}}">
+            <view class="goods_name">{{item.name}}</view>
+          </navigator>
+          <view class="goods_price_wrap">
+            <view class="goods_price">
+              ￥{{item.price}}
+            </view>
+            <view class="cart_num_tool">
+              <view class="goods_num">×{{item.stock}}</view>
+            </view>
+          </view>
+        </view>
+        <!-- 商品信息结束 -->
+      </view>
+  </view>
+</view>
+<!-- 购物车清单结束 -->
+
+<!-- 底部工具栏开始 -->
+<view class="footer_tool">
+  <!-- 合计开始 -->
+  <view class="total_price_wrap">
+    <view class="total_price">
+      共{{totalNum}}件,合计<text class="total_price_text" decode="{{true}}">&nbsp;￥{{totalPrice}}</text>
+    </view>
+  </view>
+  <!-- 合计结束 -->
+
+  <!-- 结算开始 -->
+  <view class="order_pay_wrap" bindtap="handleOrderPay">
+    去付款
+  </view>
+  <!-- 结算结束 -->
+</view>
+<!-- 底部工具栏结束 -->
+

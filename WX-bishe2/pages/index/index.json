@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SearchBar":"/components/SearchBar/SearchBar"
+  },
+  "navigationBarTitleText":"快乐足下-首页"
+}
